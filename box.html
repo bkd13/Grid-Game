@@ -4,30 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Box Model</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Grid Game Project</title>
     <style>
-  * {
-     margin: 0px;
- }
-
-
-div {
-    background-color: lightgrey;
-    border: solid darkgrey;
-    border-radius: 5px;
-    padding: 5px;
+        table {
+    table-layout: fixed;
+    width: inherit !important;
+    column-rule-color: 5px solid red;
 
 }
-p {
-    margin: 20px;
+
+td {
+    width:  20px !important;
+    height:  75px !important;
+    max-width:  150px !important;
+    max-height:  75px !important;
+    min-width:  150px !important;
+    min-height: 75px !important;
+    
+
 }
     </style>
+
+
 </head>
 <body>
+    <div class="container text-center">
+        <h1>Welcome to the Grid Game</h1>
+            <div class="row">
+                <div class="col-sm-6 bg-primary text-white p-5">Enter Player Name:</div>
+                <div class="col-sm-6 bg-dark text-white p-5">Score: </div>
+            </div>
 
-<h2>Good Evening</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, cumque!</p>
-<div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A dolorem, dolores voluptates nobis quas autem quis fugit voluptatibus laudantium. Error corporis in quaerat reprehenderit ex excepturi numquam, quos maiores ut aspernatur temporibus saepe explicabo est eveniet deleniti, ipsam odit voluptatum et voluptatibus sequi atque at consequuntur id neque. Temporibus perferendis doloremque reprehenderit mollitia repellat, consequuntur placeat in velit, unde obcaecati rem ipsa nihil fuga repudiandae libero sed eveniet sapiente. Dolore eaque delectus, fuga itaque officia iusto facilis consequuntur ratione at totam ea neque tempora consectetur dicta quae, iste ipsam alias minima corrupti eius? Tempora et minus qui, consequuntur facilis totam!</div>
+
+            <table class="table bg-dark table-bordered text-white" id="myTable"> 
+
+            </table>
+
+  
+    </div>
+
     
 </body>
+<script>
+  var table = document.getElementById("myTable");
+  var count = 0;
+    for (var i = 1; i <= 10; i++){ 
+        var tr = document.createElement("tr");
+        table.appendChild(tr);
+        for (var j = 1; j <= 10; j++) {
+            count++;
+            var td = document.createElement("td");
+            tr.appendChild(td);
+            td.innerText = count;
+        }
+
+  }
+</script>
 </html>
