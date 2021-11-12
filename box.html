@@ -12,7 +12,8 @@
         table {
     table-layout: fixed;
     width: inherit !important;
-    column-rule-color: 5px solid red;
+    column-rule-color: 5px solid white;
+    margin-top: 20px;
 
 }
 
@@ -50,17 +51,46 @@ td {
 </body>
 <script>
   var table = document.getElementById("myTable");
-  var count = 0;
-    for (var i = 1; i <= 10; i++){ 
-        var tr = document.createElement("tr");
-        table.appendChild(tr);
-        for (var j = 1; j <= 10; j++) {
-            count++;
-            var td = document.createElement("td");
-            tr.appendChild(td);
-            td.innerText = count;
+
+  var tableData = [];
+  for (var i = 0; i <= 9; i++) {
+      tableData[i] = new Array(10);
+  }
+  var count = 1;
+    for (var i=0; i<=9; i++) {
+        for (var j=0; j <= 9; j++) {
+            tableData[i][j] = count++;
+
         }
 
-  }
+
+    }
+tableData.sort(() => Math.random() - 0.5);
+    for (var i = 0; i <= 9; i++){ 
+        var tr = document.createElement("tr");
+        table.appendChild(tr);
+        for (var j = 0; j <= 9; j++) {
+            var td = document.createElement("td");
+            tr.appendChild(td);
+            td.innerText = tableData[i][j];
+        }
+    }
+
+//  var  tableData = [];
+//  var count = 0;
+//   for (var i = 0; i <= 99; i++); {
+//     tableData.push(i);
+// }
+//     for (var i = 0; i <= 9; i++){ 
+//         var tr = document.createElement("tr");
+//         table.appendChild(tr);
+//         for (var j = 0; j <= 9; j++) {
+//             var td = document.createElement("td");
+//             tr.appendChild(td);
+
+//             td.innerText = tableData[i][j];
+//         }
+
+//   }
 </script>
 </html>
